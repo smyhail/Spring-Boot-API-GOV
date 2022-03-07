@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: -30px !important;
+
+}
+
+.title h1
+{
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.headline h3
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.centerTable {
+    width: 100%;
+   
+  }
+
+table, td , tr {
+  
+    border-collapse: collapse;   
+    width: 50%;
+    padding: 15px 10px;
+}
+
+ table .cLeft
+ {
+     text-align: left;
+     font-size: 12px;
+     border: 0.5px solid rgb(199, 190, 190);
+    
+ } 
+
+ table .cRight
+ {
+     text-align: right;
+     font-size: 12px;
+     border: 0.5px solid rgb(218, 208, 208);
+    
+ }
+ table .cCentre
+ {
+     text-align: center;
+     font-size: 15px;
+     border: 0.5px solid rgb(218, 208, 208);
+ }
+
+ .headTable
+{
+    text-align: center;
+    font-weight: bold;
+    color: dodgerblue;
+    height: 40px;
+    font-size: 14px;
+}
+.dataTable
+{   
+    height:  50px;    
+    padding-left: 20px;
+}
+
+.dataTable td
+{         
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.stan
+{
+    background-color:green;
+    color: white;
+    height:  50px;
+    padding-left: 20px;
+   
+}

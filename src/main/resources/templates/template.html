@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+
+<body>
+
+<div th:if="${not #lists.isEmpty(temp)}">
+
+<div class="title">
+    <h1>Wykaz podmiotów zarejestrowanych jako
+        podatnicy VAT, niezarejestrowanych oraz wykreślonych i przywróconych do rejestru VAT</h1>
+</div>
+
+<div class="headline">
+    <h3 th:text="'Wynik wyszukiwania na podstawie numeru konta: ' + ${temp.getNumberChecked()}"></h3>
+</div>
+
+<div class="centerTable">
+
+    <table class="centerTable">
+        <tr class="headTable" >
+            <td colspan="2" th:text="${temp.getName()}">Nazwa:</td>
+        </tr>
+
+        <tr class="dataTable">
+            <td class="cLeft">Stan na dzień: 2222-22-22</td>
+            <td class="cRight"  th:text="'Data wyszukiwania: ' + ${temp.getRequestDateTime()}"></td>
+        </tr>
+
+        <tr class="stan">
+            <td colspan="2" >Figuruje w rejestrze VAT</td>
+
+        </tr>
+
+        <tr>
+            <td class="cLeft">Firma (nazwa) lub imię i nazwisko</td>
+            <td class="cRight" th:text="${temp.getName()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Numer, za pomocą którego podmiot został zidentyfikowany na potrzeby podatku, jeżeli taki numer został przyznany</td>
+            <td class="cRight" th:text="${temp.getNip()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Status podatnika (wg stanu na dzień sprawdzenia 19-01-2022)</td>
+            <td class="cRight" th:text="${temp.getStatusVat()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Numer identyfikacyjny REGON, o ile został nadany</td>
+            <td class="cRight"  th:text="${temp.getRegon()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Numer w Krajowym Rejestrze Sądowym, o ile został nadany</td>
+            <td class="cRight" th:text="${temp.getKrs()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Adres siedziby – w przypadku podmiotu niebędącego osobą fizyczną</td>
+            <td class="cRight"  th:text="${temp.getWorkingAddress()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Adres stałego miejsca prowadzenia działalności albo adres miejsca zamieszkania, w przypadku braku adresu stałego miejsca prowadzenia działalności - w odniesieniu do osoby fizycznej</td>
+            <td class="cRight" th:text="${temp.getResidenceAddress()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Imiona i nazwiska prokurentów oraz ich numery identyfikacji podatkowej</td>
+            <td class="cRight" th:text="${temp.getPartners()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Imiona i nazwiska osób wchodzących w skład organu uprawnionego do reprezentowania podmiotu oraz ich numery identyfikacji podatkowej</td>
+            <td class="cRight"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Imię i nazwisko lub firma (nazwa) wspólnika oraz jego numer identyfikacji podatkowej</td>
+            <td class="cRight"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Numery rachunków rozliczeniowych lub imiennych rachunków w SKOK</td>
+            <td class="cRight"  th:text="${temp.getAccountNumbers()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Data rejestracji jako podatnika VAT</td>
+            <td class="cRight" th:text="${temp.getRegistrationLegalDate()}"></td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">
+                Data odmowy rejestracji jako podatnika VAT <br/>
+                Podstawa prawna odmowy rejestracji</td>
+            <td class="cRight"> -</td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">
+                Data wykreślenia rejestracji jako podatnika VAT
+                Podstawa prawna wykreśleni</td>
+            <td class="cRight"> -</td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Data wykreślenia rejestracji jako podatnika VAT
+                Podstawa prawna wykreślenia</td>
+            <td class="cRight"> </td>
+        </tr>
+
+        <tr>
+            <td class="cLeft">Data przywrócenia rejestracji jako podatnika VAT
+                Podstawa prawna przywrócenia</td>
+            <td class="cRight"></td>
+        </tr>
+
+        <tr class="cCentre">
+            <td  colspan="2"  th:text="'Identyfikator wyszukiwania:: ' + ${temp.getRequestId()}"></td>
+        </tr>
+    </table>
+</div>
+</div>
+</body>
+</html>
