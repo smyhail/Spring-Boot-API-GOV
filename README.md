@@ -21,4 +21,4 @@ Backend web app.
 ## What does (the most importent)
 1. After sending bank account numbers, the application sends a request to an external API, the answer is saved in the MySQL database
 2. Create and download a single PDF.
-3. Multiple PDF creation, zip to zip and download
+3. Create multiple PDFs, package to ZIP and download all
